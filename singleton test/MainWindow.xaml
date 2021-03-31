@@ -1,0 +1,30 @@
+﻿<Window x:Class="singleton_test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:singleton_test"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="239.474" Width="613.093">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="256*"/>
+            <ColumnDefinition Width="105*"/>
+            <ColumnDefinition Width="246*"/>
+        </Grid.ColumnDefinitions>
+        <ListView Name="ItemsList" SelectionChanged="ItemsList_SelectionChanged" SelectionMode="Single" Margin="37,22,66.711,32.6" Grid.ColumnSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Item" Width="150" DisplayMemberBinding="{Binding Items}"></GridViewColumn>
+                    <GridViewColumn Header="Price" Width="100" DisplayMemberBinding="{Binding Price}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="51,58,0,0" Name="ItemBox" VerticalAlignment="Top" Width="127" Grid.Column="1" Grid.ColumnSpan="2" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="94,58,0,0" Name="PriceBox" VerticalAlignment="Top" Width="127" Grid.Column="2" />
+        <Label Name="lblItem" HorizontalAlignment="Left" Margin="51,35,0,102.6" Grid.Column="1">Item:</Label>
+        <Label Name="lblPrice" HorizontalAlignment="Left" Margin="94.289,37,0,102.6" Grid.Column="2">Price:</Label>
+        <Button Height="23" Margin="102,135,0,0" Name="btnAdd" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Click="addItem_Click" Grid.Column="1" Grid.ColumnSpan="2">Add</Button>
+        <Button Height="23" Margin="94.289,135,0,0" Name="btnDelete" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76" Click="deleteItem_Click" Grid.Column="2">Delete</Button>
+    </Grid>
+</Window>
